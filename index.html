@@ -25,7 +25,7 @@ header {
 
 .tabs {
   display: flex;
-  gap: 10px;
+  gap: 5px;
   margin-bottom: 15px;
 }
 
@@ -36,6 +36,7 @@ header {
   background: #1e293b;
   border-radius: 8px;
   cursor: pointer;
+  font-size: 12px;
 }
 
 .active {
@@ -55,6 +56,7 @@ header {
   border-radius: 10px;
   text-align: center;
   cursor: pointer;
+  margin-bottom: 10px;
 }
 
 button {
@@ -64,7 +66,8 @@ button {
   background: #ec4899;
   color: white;
   cursor: pointer;
-  margin-top: 10px;
+  margin-top: 5px;
+  width: 100%;
 }
 
 .hidden {
@@ -77,19 +80,20 @@ button {
 
 <header>
   <h2>🔐 Segurança da Informação</h2>
+  <p>Revisão Completa</p>
 </header>
 
 <div class="container">
 
   <div class="tabs">
     <div class="tab active" onclick="showTab('resumo')">Resumo</div>
+    <div class="tab" onclick="showTab('ataques')">Ataques</div>
     <div class="tab" onclick="showTab('flashcards')">Flashcards</div>
     <div class="tab" onclick="showTab('quiz')">Quiz</div>
   </div>
 
   <!-- RESUMO -->
   <div id="resumo">
-
     <div class="card">
       <h3>📌 Conceitos</h3>
       <p>Ameaça → causa dano</p>
@@ -99,33 +103,70 @@ button {
     </div>
 
     <div class="card">
-      <h3>🧱 CIA</h3>
+      <h3>🧱 Pilares</h3>
       <p>Confidencialidade</p>
       <p>Integridade</p>
       <p>Disponibilidade</p>
+      <p>+ Autenticidade</p>
     </div>
 
     <div class="card">
-      <h3>🔑 Criptografia</h3>
-      <p>Simétrica → 1 chave</p>
-      <p>Assimétrica → 2 chaves</p>
+      <h3>🔄 PDCA</h3>
+      <p>Plan → Planejar</p>
+      <p>Do → Executar</p>
+      <p>Check → Verificar</p>
+      <p>Action → Corrigir</p>
     </div>
 
+    <div class="card">
+      <h3>📜 Política de Segurança</h3>
+      <p>Diretrizes → Estratégico</p>
+      <p>Normas → Tático</p>
+      <p>Procedimentos → Operacional</p>
+    </div>
+  </div>
+
+  <!-- ATAQUES -->
+  <div id="ataques" class="hidden">
+    <div class="card">
+      <h3>⚠️ Tipos de Ataque</h3>
+      <p>Interceptação → confidencialidade</p>
+      <p>Alteração → integridade</p>
+      <p>DoS/DDoS → disponibilidade</p>
+      <p>Phishing / Spoofing → autenticidade</p>
+    </div>
+
+    <div class="card">
+      <h3>🦠 Malware</h3>
+      <p>Vírus → se replica</p>
+      <p>Spyware → espiona</p>
+      <p>Trojan → disfarçado</p>
+      <p>Ransomware → sequestra dados</p>
+      <p>Keylogger → captura teclado</p>
+    </div>
   </div>
 
   <!-- FLASHCARDS -->
   <div id="flashcards" class="hidden">
 
     <div class="flashcard" onclick="flip(this)">
-      Ameaça?
+      O que é ameaça?
     </div>
 
     <div class="flashcard" onclick="flip(this)">
-      Vulnerabilidade?
+      O que é vulnerabilidade?
+    </div>
+
+    <div class="flashcard" onclick="flip(this)">
+      O que é risco?
     </div>
 
     <div class="flashcard" onclick="flip(this)">
       CIA?
+    </div>
+
+    <div class="flashcard" onclick="flip(this)">
+      O que é phishing?
     </div>
 
   </div>
@@ -134,17 +175,24 @@ button {
   <div id="quiz" class="hidden">
 
     <div class="card">
-      <h3>O que é vulnerabilidade?</h3>
-      <button onclick="check(this, false)">Algo que causa dano</button><br>
-      <button onclick="check(this, true)">Falha explorável</button><br>
-      <button onclick="check(this, false)">Um ataque</button>
+      <h3>Vulnerabilidade é:</h3>
+      <button onclick="check(this,false)">Um ataque</button>
+      <button onclick="check(this,true)">Uma falha explorável</button>
+      <button onclick="check(this,false)">Uma proteção</button>
     </div>
 
     <div class="card">
-      <h3>Quantas chaves tem a criptografia assimétrica?</h3>
-      <button onclick="check(this, false)">1</button><br>
-      <button onclick="check(this, true)">2</button><br>
-      <button onclick="check(this, false)">3</button>
+      <h3>Qual é um ataque de disponibilidade?</h3>
+      <button onclick="check(this,false)">Phishing</button>
+      <button onclick="check(this,true)">DDoS</button>
+      <button onclick="check(this,false)">Spoofing</button>
+    </div>
+
+    <div class="card">
+      <h3>Criptografia assimétrica usa:</h3>
+      <button onclick="check(this,false)">1 chave</button>
+      <button onclick="check(this,true)">2 chaves</button>
+      <button onclick="check(this,false)">3 chaves</button>
     </div>
 
   </div>
@@ -153,28 +201,27 @@ button {
 
 <script>
 function showTab(tab) {
-  document.getElementById('resumo').classList.add('hidden');
-  document.getElementById('flashcards').classList.add('hidden');
-  document.getElementById('quiz').classList.add('hidden');
+  document.querySelectorAll("div[id]").forEach(el => el.classList.add("hidden"));
+  document.getElementById(tab).classList.remove("hidden");
 
-  document.getElementById(tab).classList.remove('hidden');
-
-  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-  event.target.classList.add('active');
+  document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+  event.target.classList.add("active");
 }
 
 function flip(el) {
-  if (el.innerHTML === "Ameaça?") el.innerHTML = "Algo que pode causar dano";
-  else if (el.innerHTML === "Vulnerabilidade?") el.innerHTML = "Falha explorável";
-  else if (el.innerHTML === "CIA?") el.innerHTML = "Confidencialidade, Integridade, Disponibilidade";
+  const map = {
+    "O que é ameaça?": "Algo que pode causar dano",
+    "O que é vulnerabilidade?": "Falha explorável",
+    "O que é risco?": "Probabilidade de dano",
+    "CIA?": "Confidencialidade, Integridade, Disponibilidade",
+    "O que é phishing?": "Enganar para roubar dados"
+  };
+
+  el.innerHTML = map[el.innerHTML] || Object.keys(map).find(k => map[k] === el.innerHTML);
 }
 
 function check(btn, correct) {
-  if (correct) {
-    btn.style.background = "green";
-  } else {
-    btn.style.background = "red";
-  }
+  btn.style.background = correct ? "green" : "red";
 }
 </script>
 
