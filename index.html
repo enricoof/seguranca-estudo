@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Segurança da Informação - Estudo</title>
+
+<style>
+body {
+  font-family: Arial;
+  margin: 0;
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+header {
+  background: linear-gradient(90deg, #7c3aed, #ec4899);
+  padding: 20px;
+  text-align: center;
+}
+
+.container {
+  padding: 15px;
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.tab {
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+  background: #1e293b;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.active {
+  background: #7c3aed;
+}
+
+.card {
+  background: #1e293b;
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.flashcard {
+  background: #334155;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #ec4899;
+  color: white;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.hidden {
+  display: none;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h2>🔐 Segurança da Informação</h2>
+</header>
+
+<div class="container">
+
+  <div class="tabs">
+    <div class="tab active" onclick="showTab('resumo')">Resumo</div>
+    <div class="tab" onclick="showTab('flashcards')">Flashcards</div>
+    <div class="tab" onclick="showTab('quiz')">Quiz</div>
+  </div>
+
+  <!-- RESUMO -->
+  <div id="resumo">
+
+    <div class="card">
+      <h3>📌 Conceitos</h3>
+      <p>Ameaça → causa dano</p>
+      <p>Vulnerabilidade → falha</p>
+      <p>Ataque → exploração</p>
+      <p><strong>Risco = Ameaça + Vulnerabilidade</strong></p>
+    </div>
+
+    <div class="card">
+      <h3>🧱 CIA</h3>
+      <p>Confidencialidade</p>
+      <p>Integridade</p>
+      <p>Disponibilidade</p>
+    </div>
+
+    <div class="card">
+      <h3>🔑 Criptografia</h3>
+      <p>Simétrica → 1 chave</p>
+      <p>Assimétrica → 2 chaves</p>
+    </div>
+
+  </div>
+
+  <!-- FLASHCARDS -->
+  <div id="flashcards" class="hidden">
+
+    <div class="flashcard" onclick="flip(this)">
+      Ameaça?
+    </div>
+
+    <div class="flashcard" onclick="flip(this)">
+      Vulnerabilidade?
+    </div>
+
+    <div class="flashcard" onclick="flip(this)">
+      CIA?
+    </div>
+
+  </div>
+
+  <!-- QUIZ -->
+  <div id="quiz" class="hidden">
+
+    <div class="card">
+      <h3>O que é vulnerabilidade?</h3>
+      <button onclick="check(this, false)">Algo que causa dano</button><br>
+      <button onclick="check(this, true)">Falha explorável</button><br>
+      <button onclick="check(this, false)">Um ataque</button>
+    </div>
+
+    <div class="card">
+      <h3>Quantas chaves tem a criptografia assimétrica?</h3>
+      <button onclick="check(this, false)">1</button><br>
+      <button onclick="check(this, true)">2</button><br>
+      <button onclick="check(this, false)">3</button>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+function showTab(tab) {
+  document.getElementById('resumo').classList.add('hidden');
+  document.getElementById('flashcards').classList.add('hidden');
+  document.getElementById('quiz').classList.add('hidden');
+
+  document.getElementById(tab).classList.remove('hidden');
+
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  event.target.classList.add('active');
+}
+
+function flip(el) {
+  if (el.innerHTML === "Ameaça?") el.innerHTML = "Algo que pode causar dano";
+  else if (el.innerHTML === "Vulnerabilidade?") el.innerHTML = "Falha explorável";
+  else if (el.innerHTML === "CIA?") el.innerHTML = "Confidencialidade, Integridade, Disponibilidade";
+}
+
+function check(btn, correct) {
+  if (correct) {
+    btn.style.background = "green";
+  } else {
+    btn.style.background = "red";
+  }
+}
+</script>
+
+</body>
+</html>
