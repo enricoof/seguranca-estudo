@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Segurança da Informação - Estudo</title>
+<title>Segurança da Informação - Prova</title>
 
 <style>
 body {
@@ -31,7 +31,7 @@ header {
 
 .tab {
   flex: 1;
-  padding: 10px;
+  padding: 8px;
   text-align: center;
   background: #1e293b;
   border-radius: 8px;
@@ -73,6 +73,14 @@ button {
 .hidden {
   display: none;
 }
+
+.answer {
+  background: #020617;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 10px;
+  font-size: 13px;
+}
 </style>
 </head>
 
@@ -80,122 +88,106 @@ button {
 
 <header>
   <h2>🔐 Segurança da Informação</h2>
-  <p>Revisão Completa</p>
+  <p>Modo Prova</p>
 </header>
 
 <div class="container">
 
-  <div class="tabs">
-    <div class="tab active" onclick="showTab('resumo')">Resumo</div>
-    <div class="tab" onclick="showTab('ataques')">Ataques</div>
-    <div class="tab" onclick="showTab('flashcards')">Flashcards</div>
-    <div class="tab" onclick="showTab('quiz')">Quiz</div>
-  </div>
+<div class="tabs">
+  <div class="tab active" onclick="showTab('prova')">Prova</div>
+  <div class="tab" onclick="showTab('resumo')">Resumo</div>
+  <div class="tab" onclick="showTab('flashcards')">Flashcards</div>
+  <div class="tab" onclick="showTab('quiz')">Quiz</div>
+</div>
 
-  <!-- RESUMO -->
-  <div id="resumo">
-    <div class="card">
-      <h3>📌 Conceitos</h3>
-      <p>Ameaça → causa dano</p>
-      <p>Vulnerabilidade → falha</p>
-      <p>Ataque → exploração</p>
-      <p><strong>Risco = Ameaça + Vulnerabilidade</strong></p>
-    </div>
+<!-- PROVA -->
+<div id="prova">
 
-    <div class="card">
-      <h3>🧱 Pilares</h3>
-      <p>Confidencialidade</p>
-      <p>Integridade</p>
-      <p>Disponibilidade</p>
-      <p>+ Autenticidade</p>
-    </div>
+<div class="card">
+<h3>1) Definições</h3>
+<div class="answer">
+Ameaça: qualquer evento que pode causar dano ao sistema.<br><br>
+Vulnerabilidade: falha que pode ser explorada por um atacante.<br><br>
+Ataque: ação de explorar uma vulnerabilidade.<br><br>
+Risco: probabilidade de uma ameaça explorar uma vulnerabilidade.<br><br>
+Segurança: conjunto de medidas para proteger a informação.
+</div>
+</div>
 
-    <div class="card">
-      <h3>🔄 PDCA</h3>
-      <p>Plan → Planejar</p>
-      <p>Do → Executar</p>
-      <p>Check → Verificar</p>
-      <p>Action → Corrigir</p>
-    </div>
+<div class="card">
+<h3>2) Tipos de Ataque</h3>
+<div class="answer">
+Interceptação (confidencialidade) → captura de dados.<br>
+Alteração (integridade) → modificação de dados.<br>
+DoS/DDoS (disponibilidade) → derrubar sistemas.<br>
+Mascaramento (autenticidade) → phishing e spoofing.<br><br>
+Proteção: criptografia, firewall, backup, treinamento e controle de acesso.
+</div>
+</div>
 
-    <div class="card">
-      <h3>📜 Política de Segurança</h3>
-      <p>Diretrizes → Estratégico</p>
-      <p>Normas → Tático</p>
-      <p>Procedimentos → Operacional</p>
-    </div>
-  </div>
+<div class="card">
+<h3>3) Pilares da Segurança</h3>
+<div class="answer">
+Confidencialidade: apenas usuários autorizados acessam.<br>
+Integridade: dados não são alterados indevidamente.<br>
+Disponibilidade: dados acessíveis quando necessário.
+</div>
+</div>
 
-  <!-- ATAQUES -->
-  <div id="ataques" class="hidden">
-    <div class="card">
-      <h3>⚠️ Tipos de Ataque</h3>
-      <p>Interceptação → confidencialidade</p>
-      <p>Alteração → integridade</p>
-      <p>DoS/DDoS → disponibilidade</p>
-      <p>Phishing / Spoofing → autenticidade</p>
-    </div>
+<div class="card">
+<h3>4) Criptografia</h3>
+<div class="answer">
+Simétrica: usa uma única chave, mais rápida.<br>
+Assimétrica: usa chave pública e privada, mais segura.
+</div>
+</div>
 
-    <div class="card">
-      <h3>🦠 Malware</h3>
-      <p>Vírus → se replica</p>
-      <p>Spyware → espiona</p>
-      <p>Trojan → disfarçado</p>
-      <p>Ransomware → sequestra dados</p>
-      <p>Keylogger → captura teclado</p>
-    </div>
-  </div>
+</div>
 
-  <!-- FLASHCARDS -->
-  <div id="flashcards" class="hidden">
+<!-- RESUMO -->
+<div id="resumo" class="hidden">
+<div class="card">
+<h3>📌 Conceitos</h3>
+<p>Risco = Ameaça + Vulnerabilidade</p>
+</div>
 
-    <div class="flashcard" onclick="flip(this)">
-      O que é ameaça?
-    </div>
+<div class="card">
+<h3>🧱 CIA</h3>
+<p>Confidencialidade</p>
+<p>Integridade</p>
+<p>Disponibilidade</p>
+</div>
+</div>
 
-    <div class="flashcard" onclick="flip(this)">
-      O que é vulnerabilidade?
-    </div>
+<!-- FLASHCARDS -->
+<div id="flashcards" class="hidden">
 
-    <div class="flashcard" onclick="flip(this)">
-      O que é risco?
-    </div>
+<div class="flashcard" onclick="flip(this)">O que é ameaça?</div>
+<div class="flashcard" onclick="flip(this)">O que é vulnerabilidade?</div>
+<div class="flashcard" onclick="flip(this)">O que é risco?</div>
+<div class="flashcard" onclick="flip(this)">O que é phishing?</div>
+<div class="flashcard" onclick="flip(this)">O que é DDoS?</div>
 
-    <div class="flashcard" onclick="flip(this)">
-      CIA?
-    </div>
+</div>
 
-    <div class="flashcard" onclick="flip(this)">
-      O que é phishing?
-    </div>
+<!-- QUIZ -->
+<div id="quiz" class="hidden">
 
-  </div>
+<div class="card">
+<h3>Qual é um ataque de disponibilidade?</h3>
+<button onclick="check(this,false)">Phishing</button>
+<button onclick="check(this,true)">DDoS</button>
+<button onclick="check(this,false)">Spoofing</button>
+</div>
 
-  <!-- QUIZ -->
-  <div id="quiz" class="hidden">
+<div class="card">
+<h3>Vulnerabilidade é:</h3>
+<button onclick="check(this,true)">Falha explorável</button>
+<button onclick="check(this,false)">Proteção</button>
+<button onclick="check(this,false)">Ataque</button>
+</div>
 
-    <div class="card">
-      <h3>Vulnerabilidade é:</h3>
-      <button onclick="check(this,false)">Um ataque</button>
-      <button onclick="check(this,true)">Uma falha explorável</button>
-      <button onclick="check(this,false)">Uma proteção</button>
-    </div>
-
-    <div class="card">
-      <h3>Qual é um ataque de disponibilidade?</h3>
-      <button onclick="check(this,false)">Phishing</button>
-      <button onclick="check(this,true)">DDoS</button>
-      <button onclick="check(this,false)">Spoofing</button>
-    </div>
-
-    <div class="card">
-      <h3>Criptografia assimétrica usa:</h3>
-      <button onclick="check(this,false)">1 chave</button>
-      <button onclick="check(this,true)">2 chaves</button>
-      <button onclick="check(this,false)">3 chaves</button>
-    </div>
-
-  </div>
+</div>
 
 </div>
 
@@ -213,11 +205,20 @@ function flip(el) {
     "O que é ameaça?": "Algo que pode causar dano",
     "O que é vulnerabilidade?": "Falha explorável",
     "O que é risco?": "Probabilidade de dano",
-    "CIA?": "Confidencialidade, Integridade, Disponibilidade",
-    "O que é phishing?": "Enganar para roubar dados"
+    "O que é phishing?": "Enganar para roubar dados",
+    "O que é DDoS?": "Ataque que derruba sistemas por excesso de acessos"
   };
 
-  el.innerHTML = map[el.innerHTML] || Object.keys(map).find(k => map[k] === el.innerHTML);
+  const reverseMap = {};
+  for (let key in map) {
+    reverseMap[map[key]] = key;
+  }
+
+  if (map[el.innerText]) {
+    el.innerText = map[el.innerText];
+  } else if (reverseMap[el.innerText]) {
+    el.innerText = reverseMap[el.innerText];
+  }
 }
 
 function check(btn, correct) {
