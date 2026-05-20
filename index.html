@@ -3,188 +3,219 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Segurança da Informação - Prova</title>
+<title>Segurança da Informação - Revisão NP2</title>
 
 <style>
-body {
-  font-family: Arial;
-  margin: 0;
-  background: #0f172a;
-  color: #e2e8f0;
-}
-
-header {
-  background: linear-gradient(90deg, #7c3aed, #ec4899);
-  padding: 20px;
-  text-align: center;
-}
-
-.container {
-  padding: 15px;
-}
-
-.tabs {
-  display: flex;
-  gap: 5px;
-  margin-bottom: 15px;
-}
-
-.tab {
-  flex: 1;
-  padding: 8px;
-  text-align: center;
-  background: #1e293b;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 12px;
-}
-
-.active {
-  background: #7c3aed;
-}
-
-.card {
-  background: #1e293b;
-  padding: 15px;
-  border-radius: 12px;
-  margin-bottom: 15px;
-}
-
-.flashcard {
-  background: #334155;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  cursor: pointer;
-  margin-bottom: 10px;
-}
-
-button {
-  padding: 10px;
-  border: none;
-  border-radius: 8px;
-  background: #ec4899;
-  color: white;
-  cursor: pointer;
-  margin-top: 5px;
-  width: 100%;
-}
-
-.hidden {
-  display: none;
-}
-
-.answer {
-  background: #020617;
-  padding: 10px;
-  border-radius: 8px;
-  margin-top: 10px;
-  font-size: 13px;
-}
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; margin: 0; background: #0f172a; color: #e2e8f0; line-height: 1.6; }
+header { background: linear-gradient(90deg, #dc2626, #7f1d1d); padding: 20px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
+header h2 { margin: 0 0 5px 0; font-size: 22px; color: #ffffff;}
+header p { margin: 0; font-size: 14px; opacity: 0.9; }
+.container { padding: 15px; max-width: 800px; margin: 0 auto; }
+.tabs { display: flex; gap: 5px; margin-bottom: 20px; overflow-x: auto; padding-bottom: 5px;}
+.tab { flex: 1; min-width: 90px; padding: 10px 5px; text-align: center; background: #1e293b; border-radius: 8px; cursor: pointer; font-size: 13px; font-weight: bold; transition: background 0.2s; }
+.active { background: #dc2626; color: white; }
+.card { background: #1e293b; padding: 18px; border-radius: 12px; margin-bottom: 15px; border-left: 4px solid #ef4444; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+.card h3 { margin-top: 0; margin-bottom: 10px; color: #fca5a5; font-size: 16px; }
+.flashcard { background: linear-gradient(135deg, #334155, #1e293b); padding: 25px 15px; border-radius: 10px; text-align: center; cursor: pointer; margin-bottom: 12px; font-weight: bold; font-size: 15px; border: 1px solid #475569; transition: transform 0.2s, background 0.2s; min-height: 70px; display: flex; align-items: center; justify-content: center; }
+.flashcard:active { transform: scale(0.98); }
+button { padding: 12px; border: none; border-radius: 8px; background: #334155; color: white; cursor: pointer; margin-top: 8px; width: 100%; font-size: 14px; transition: background 0.2s; border: 1px solid #475569; text-align: left;}
+button:hover { background: #475569; }
+.hidden { display: none; }
+.answer { background: #020617; padding: 12px; border-radius: 8px; margin-top: 10px; font-size: 14px; color: #cbd5e1; border-left: 3px solid #10b981;}
+.highlight { color: #ef4444; font-weight: bold; }
+table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 13px;}
+th, td { border: 1px solid #475569; padding: 8px; text-align: left; }
+th { background-color: #334155; color: white; }
 </style>
 </head>
 
 <body>
 
 <header>
-  <h2>🔐 Segurança da Informação</h2>
-  <p>Modo Prova</p>
+<h2>🛡️ Segurança da Informação</h2>
+<p>Resolução do PDF - NP2</p>
 </header>
 
 <div class="container">
 
 <div class="tabs">
-  <div class="tab active" onclick="showTab('prova')">Prova</div>
-  <div class="tab" onclick="showTab('resumo')">Resumo</div>
-  <div class="tab" onclick="showTab('flashcards')">Flashcards</div>
-  <div class="tab" onclick="showTab('quiz')">Quiz</div>
+<div class="tab active" onclick="showTab('prova')">📝 PDF Resolvido</div>
+<div class="tab" onclick="showTab('resumo')">📚 Resumo</div>
+<div class="tab" onclick="showTab('flashcards')">🗂️ Flashcards</div>
+<div class="tab" onclick="showTab('quiz')">🎯 Quiz</div>
 </div>
 
-<!-- PROVA -->
 <div id="prova">
+    <p style="font-size: 13px; color: #94a3b8; text-align: center;">Respostas baseadas na topologia de rede do seu PDF de exercícios.</p>
 
 <div class="card">
-<h3>1) Definições</h3>
+<h3>1) Quais servidores destacar para montar uma DMZ?</h3>
 <div class="answer">
-Ameaça: qualquer evento que pode causar dano ao sistema.<br><br>
-Vulnerabilidade: falha que pode ser explorada por um atacante.<br><br>
-Ataque: ação de explorar uma vulnerabilidade.<br><br>
-Risco: probabilidade de uma ameaça explorar uma vulnerabilidade.<br><br>
-Segurança: conjunto de medidas para proteger a informação.
+<b>Alternativa E:</b> E-Mail_Server_SP_01, DNS_Server, WEB_e_FTP_Server_SP_01 e WEB_e_FTP_Server_SP_02.<br><br>
+<i>Justificativa:</i> A DMZ (Zona Desmilitarizada) deve conter apenas os servidores que precisam ser acessados externamente (pela Internet). Servidores de Banco de Dados (Data Base) devem <b>sempre</b> ficar na rede interna, protegidos.
 </div>
 </div>
 
 <div class="card">
-<h3>2) Tipos de Ataque</h3>
+<h3>2) Qual tecnologia é utilizada nos Servidores de Banco de Dados?</h3>
 <div class="answer">
-Interceptação (confidencialidade) → captura de dados.<br>
-Alteração (integridade) → modificação de dados.<br>
-DoS/DDoS (disponibilidade) → derrubar sistemas.<br>
-Mascaramento (autenticidade) → phishing e spoofing.<br><br>
-Proteção: criptografia, firewall, backup, treinamento e controle de acesso.
+<b>Alternativa D:</b> RAID e CLUSTER.<br><br>
+<i>Justificativa:</i> Bancos de dados exigem alta disponibilidade e redundância. O RAID protege contra falhas nos discos rígidos (hardware), enquanto o CLUSTER protege contra falhas no servidor como um todo (se um cair, o outro assume).
 </div>
 </div>
 
 <div class="card">
-<h3>3) Pilares da Segurança</h3>
+<h3>3) Qual tecnologia é utilizada na STORAGE?</h3>
 <div class="answer">
-Confidencialidade: apenas usuários autorizados acessam.<br>
-Integridade: dados não são alterados indevidamente.<br>
-Disponibilidade: dados acessíveis quando necessário.
+<b>Alternativa E:</b> CONTROLADORA RAID e HOT-SWAP.<br><br>
+<i>Justificativa:</i> Em storages corporativos, usa-se RAID via Hardware (Controladora) por performance, e discos Hot-Swap, que permitem a troca de um disco queimado com o servidor ligado, sem indisponibilidade.
 </div>
 </div>
 
 <div class="card">
-<h3>4) Criptografia</h3>
+<h3>4) Qual o risco de ter informações furtadas nesta rede? E matriz GUT?</h3>
 <div class="answer">
-Simétrica: usa uma única chave, mais rápida.<br>
-Assimétrica: usa chave pública e privada, mais segura.
+O risco é <b>ALTO</b>. Analisando a topologia do PDF, nota-se a presença de <b>HUBs</b> (HUB_SP_01 e HUB_RJ_01). HUBs operam em broadcast (replicam pacotes para todas as portas), tornando a rede extremamente vulnerável a ataques de <i>Sniffing</i> (interceptação de tráfego) por qualquer máquina conectada a eles.<br><br>
+<b>Matriz GUT (Exemplo: Substituição do HUB):</b><br>
+- <b>Gravidade (G):</b> 5 (Vazamento de dados críticos é gravíssimo).<br>
+- <b>Urgência (U):</b> 5 (Ação imediata necessária).<br>
+- <b>Tendência (T):</b> 4 (Se não agir, a chance de um ataque bem-sucedido piora rapidamente).<br>
+- <b>Total (G x U x T):</b> 100 pontos (Prioridade Máxima).
+</div>
+</div>
+
+<div class="card">
+<h3>5) Esta rede é segura? Explique.</h3>
+<div class="answer">
+<b>Não.</b> Nenhuma rede é 100% segura, mas esta topologia possui falhas de arquitetura críticas:<br>
+1. Uso de <b>HUBs</b> em vez de Switches em algumas ramificações (facilita sniffing).<br>
+2. Os servidores de E-mail, Web e DNS parecem compartilhar o mesmo range/interface interna que outros serviços, quando deveriam estar isolados fisicamente ou via VLANs rígidas numa DMZ bem delimitada pelos Firewalls (FW_SP_01 e 02).
+</div>
+</div>
+
+<div class="card">
+<h3>7) (Mod 2) Etapas da Computação Forense</h3>
+<div class="answer">
+<b>Alternativa A:</b> Aquisição de dados, preservação de dados e análise de dados.<br><br>
+<i>Justificativa:</i> Primeiro coleta-se a evidência, garante-se que ela não seja alterada (gerando hashes/cópias exatas) e, por fim, analisa-se o conteúdo.
+</div>
+</div>
+
+<div class="card">
+<h3>8) (Mod 5) Ativo para garantir Disponibilidade</h3>
+<div class="answer">
+<b>Alternativa A:</b> Storage com Hotswap ou hotplug e RAID.<br><br>
+<i>Justificativa:</i> A disponibilidade (um dos pilares da SI) é garantida mantendo o sistema no ar mesmo em falhas físicas. RAID e Hotswap servem exatamente para isso.
+</div>
+</div>
+
+<div class="card">
+<h3>9) (Mod 6) Garantir integridade e sigilo por colaboradores (RH)</h3>
+<div class="answer">
+<b>Alternativa A:</b> Fornecer treinamento e divulgar de forma adequada sua política de segurança.<br><br>
+<i>Justificativa:</i> O elo mais fraco da segurança é o ser humano. Políticas restritivas sem educação não funcionam; o treinamento contínuo (Security Awareness) é a melhor ferramenta.
+</div>
+</div>
+
+<div class="card">
+<h3>10) (Mod 8) Criptografia Assimétrica possui:</h3>
+<div class="answer">
+<b>Alternativa E:</b> 1 chave pública e uma privada.<br><br>
+<i>Justificativa:</i> Diferente da Simétrica (1 chave única para cifrar e decifrar), a Assimétrica usa um par de chaves matemáticas: o que a Pública cifra, só a Privada decifra (e vice-versa para assinatura digital).
+</div>
+</div>
+
+<div class="card">
+<h3>11) (Mod 9) Finalidade de uma DMZ</h3>
+<div class="answer">
+<b>Alternativa A:</b> Criar uma área de rede isolada dentro da rede da empresa de modo que todos tenham acesso mas que a rede interna não esteja visível para internet.<br><br>
+<i>Justificativa:</i> A DMZ atua como um "para-choque". Expõe os serviços públicos (Site, Email) para a Internet, mas barra o acesso da Internet à rede corporativa interna (onde ficam os Bancos de Dados e computadores dos funcionários).
 </div>
 </div>
 
 </div>
 
-<!-- RESUMO -->
 <div id="resumo" class="hidden">
 <div class="card">
-<h3>📌 Conceitos</h3>
-<p>Risco = Ameaça + Vulnerabilidade</p>
+<h3>Pilares da Segurança (CIA Triad)</h3>
+<ul>
+    <li><b>Confidencialidade:</b> Apenas pessoas autorizadas acessam o dado (Criptografia).</li>
+    <li><b>Integridade:</b> O dado não foi alterado indevidamente (Hashes).</li>
+    <li><b>Disponibilidade:</b> O dado está acessível quando necessário (RAID, Cluster, Backups).</li>
+</ul>
 </div>
 
 <div class="card">
-<h3>🧱 CIA</h3>
-<p>Confidencialidade</p>
-<p>Integridade</p>
-<p>Disponibilidade</p>
+<h3>Topologia: HUB vs Switch</h3>
+<p>O <b>HUB</b> opera na camada 1 (Física). Ele recebe um dado em uma porta e replica para TODAS as outras. É um pesadelo de segurança (qualquer um pode interceptar os pacotes - <i>Sniffing</i>).<br>O <b>Switch</b> opera na camada 2. Ele aprende os MAC Addresses e entrega o pacote apenas na porta correta do destinatário.</p>
+</div>
+
+<div class="card">
+<h3>Matriz GUT</h3>
+<p>Ferramenta de análise de risco e priorização de problemas.</p>
+<ul>
+    <li><b>G (Gravidade):</b> O impacto do problema (1 a 5).</li>
+    <li><b>U (Urgência):</b> O tempo disponível para resolver (1 a 5).</li>
+    <li><b>T (Tendência):</b> O potencial de piora se nada for feito (1 a 5).</li>
+</ul>
+<p>Multiplica-se G x U x T. O maior número é o risco que deve ser tratado primeiro.</p>
+</div>
+
+<div class="card">
+<h3>Criptografia</h3>
+<p><b>Simétrica:</b> 1 chave apenas (usada para cifrar e decifrar). É mais rápida (Ex: AES).<br>
+<b>Assimétrica:</b> 2 chaves (Pública e Privada). É mais lenta, mas resolve o problema de distribuição de chaves e garante o não-repúdio (Assinatura Digital). (Ex: RSA).</p>
 </div>
 </div>
 
-<!-- FLASHCARDS -->
 <div id="flashcards" class="hidden">
+<p style="font-size: 13px; text-align: center; color: #94a3b8;">Toque no cartão para ver a resposta!</p>
 
-<div class="flashcard" onclick="flip(this)">O que é ameaça?</div>
-<div class="flashcard" onclick="flip(this)">O que é vulnerabilidade?</div>
-<div class="flashcard" onclick="flip(this)">O que é risco?</div>
-<div class="flashcard" onclick="flip(this)">O que é phishing?</div>
-<div class="flashcard" onclick="flip(this)">O que é DDoS?</div>
+<div class="flashcard" onclick="flip(this)">O que é uma DMZ?</div>
+<div class="flashcard" onclick="flip(this)">Quais servidores devem ficar na DMZ?</div>
+<div class="flashcard" onclick="flip(this)">O que o Banco de Dados NUNCA deve fazer na topologia?</div>
+<div class="flashcard" onclick="flip(this)">Por que um HUB é um risco de segurança?</div>
+<div class="flashcard" onclick="flip(this)">Como funciona a Criptografia Assimétrica?</div>
+<div class="flashcard" onclick="flip(this)">O que é Hot-Swap?</div>
+<div class="flashcard" onclick="flip(this)">Quais as 3 etapas da Computação Forense?</div>
 
 </div>
 
-<!-- QUIZ -->
 <div id="quiz" class="hidden">
 
 <div class="card">
-<h3>Qual é um ataque de disponibilidade?</h3>
-<button onclick="check(this,false)">Phishing</button>
-<button onclick="check(this,true)">DDoS</button>
-<button onclick="check(this,false)">Spoofing</button>
+<h3>1. O Banco de Dados de uma empresa deve ser alocado em qual parte da rede?</h3>
+<button onclick="check(this,false)">Na DMZ, junto com o Servidor Web.</button>
+<button onclick="check(this,true)">Na rede interna (LAN), isolado do acesso direto à Internet.</button>
+<button onclick="check(this,false)">Na nuvem pública, sem controle de Firewall.</button>
 </div>
 
 <div class="card">
-<h3>Vulnerabilidade é:</h3>
-<button onclick="check(this,true)">Falha explorável</button>
-<button onclick="check(this,false)">Proteção</button>
-<button onclick="check(this,false)">Ataque</button>
+<h3>2. Qual a principal vulnerabilidade causada pelo uso de HUBs na rede?</h3>
+<button onclick="check(this,false)">Eles não suportam cabos Fast Ethernet.</button>
+<button onclick="check(this,false)">Eles bloqueiam portas automaticamente e causam DoS.</button>
+<button onclick="check(this,true)">Eles replicam o tráfego para todas as portas, facilitando ataques de interceptação (Sniffing).</button>
+</div>
+
+<div class="card">
+<h3>3. Na Matriz GUT, o que significa a letra 'T'?</h3>
+<button onclick="check(this,false)">Tratamento: o esforço necessário para consertar a falha.</button>
+<button onclick="check(this,true)">Tendência: a probabilidade do problema piorar com o passar do tempo.</button>
+<button onclick="check(this,false)">Tolerância: o nível de risco que a empresa aceita correr.</button>
+</div>
+
+<div class="card">
+<h3>4. Como garantir o pilar da Disponibilidade em Servidores de Banco de Dados?</h3>
+<button onclick="check(this,true)">Utilizando tecnologias como RAID para os discos e Clusterização de Servidores.</button>
+<button onclick="check(this,false)">Aplicando criptografia Assimétrica de 2048 bits nos dados.</button>
+<button onclick="check(this,false)">Colocando o Banco de Dados em uma Zona Desmilitarizada (DMZ).</button>
+</div>
+
+<div class="card">
+<h3>5. Na segurança envolvendo Recursos Humanos, qual a ação mais efetiva?</h3>
+<button onclick="check(this,false)">Restringir totalmente o acesso à internet de todos os funcionários.</button>
+<button onclick="check(this,false)">Manter a política de segurança em segredo absoluto entre a diretoria e a TI.</button>
+<button onclick="check(this,true)">Fornecer treinamento adequado e divulgar amplamente as políticas de segurança aos colaboradores.</button>
 </div>
 
 </div>
@@ -193,7 +224,11 @@ Assimétrica: usa chave pública e privada, mais segura.
 
 <script>
 function showTab(tab) {
-  document.querySelectorAll("div[id]").forEach(el => el.classList.add("hidden"));
+  document.querySelectorAll("div[id]").forEach(el => {
+      if(el.parentElement.className === "container") {
+          el.classList.add("hidden");
+      }
+  });
   document.getElementById(tab).classList.remove("hidden");
 
   document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
@@ -201,28 +236,56 @@ function showTab(tab) {
 }
 
 function flip(el) {
+  // Mapa de Perguntas -> Respostas
   const map = {
-    "O que é ameaça?": "Algo que pode causar dano",
-    "O que é vulnerabilidade?": "Falha explorável",
-    "O que é risco?": "Probabilidade de dano",
-    "O que é phishing?": "Enganar para roubar dados",
-    "O que é DDoS?": "Ataque que derruba sistemas por excesso de acessos"
+    "O que é uma DMZ?": "Zona Desmilitarizada. Área isolada da rede que expõe serviços públicos à internet, protegendo a rede interna.",
+    "Quais servidores devem ficar na DMZ?": "Servidores com acesso externo: Web, FTP, DNS e E-mail.",
+    "O que o Banco de Dados NUNCA deve fazer na topologia?": "Ficar na DMZ ou ter acesso direto e irrestrito da Internet.",
+    "Por que um HUB é um risco de segurança?": "Ele manda todos os pacotes para todas as portas. Qualquer máquina conectada pode 'ouvir' o tráfego da rede (Sniffing).",
+    "Como funciona a Criptografia Assimétrica?": "Usa um par de chaves: uma Pública (distribuída a todos) e uma Privada (mantida em segredo absoluto).",
+    "O que é Hot-Swap?": "Capacidade de trocar componentes (como Discos Rígidos) com o servidor ligado, garantindo a Disponibilidade.",
+    "Quais as 3 etapas da Computação Forense?": "1) Aquisição de dados, 2) Preservação de dados e 3) Análise de dados."
   };
 
   const reverseMap = {};
-  for (let key in map) {
-    reverseMap[map[key]] = key;
-  }
+  for (let key in map) reverseMap[map[key]] = key;
 
-  if (map[el.innerText]) {
-    el.innerText = map[el.innerText];
-  } else if (reverseMap[el.innerText]) {
-    el.innerText = reverseMap[el.innerText];
-  }
+  el.style.opacity = 0;
+  setTimeout(() => {
+      if (map[el.innerText]) {
+          el.innerText = map[el.innerText];
+          el.style.color = "#fca5a5"; 
+      } else if (reverseMap[el.innerText]) {
+          el.innerText = reverseMap[el.innerText];
+          el.style.color = "#e2e8f0";
+      }
+      el.style.opacity = 1;
+  }, 150);
 }
 
 function check(btn, correct) {
-  btn.style.background = correct ? "green" : "red";
+  const buttons = btn.parentElement.querySelectorAll("button");
+  buttons.forEach(b => {
+      b.disabled = true;
+      b.style.opacity = "0.6";
+      b.style.cursor = "default";
+  });
+  
+  if(correct) {
+      btn.style.background = "#16a34a"; // Verde
+      btn.style.opacity = "1";
+      btn.innerHTML += " ✅";
+  } else {
+      btn.style.background = "#dc2626"; // Vermelho
+      btn.style.opacity = "1";
+      btn.innerHTML += " ❌";
+      buttons.forEach(b => {
+          if(b.getAttribute('onclick').includes('true')) {
+              b.style.background = "#16a34a";
+              b.style.opacity = "1";
+          }
+      });
+  }
 }
 </script>
 
